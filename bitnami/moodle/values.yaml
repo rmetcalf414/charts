@@ -78,11 +78,11 @@ moodleSkipInstall: false
 ## @param moodleSiteName Site name
 ## ref: https://github.com/bitnami/bitnami-docker-moodle#configuration
 ##
-moodleSiteName: ""
+moodleSiteName: "Ryan's Moodle Site"
 ## @param moodleUsername User of the application
 ## ref: https://github.com/bitnami/bitnami-docker-moodle#configuration
 ##
-moodleUsername: user
+moodleUsername: rmetcalf
 ## @param moodlePassword Application password
 ## Defaults to a random 10-character alphanumeric string if not set
 ## ref: https://github.com/bitnami/bitnami-docker-moodle#configuration
@@ -91,7 +91,7 @@ moodlePassword: ""
 ## @param moodleEmail Admin email
 ## ref: https://github.com/bitnami/bitnami-docker-moodle#configuration
 ##
-moodleEmail: user@example.com
+moodleEmail: ryan.metcalf414@gmail.com
 ## @param allowEmptyPassword Allow DB blank passwords
 ## ref: https://github.com/bitnami/bitnami-docker-moodle#environment-variables
 ##
@@ -114,7 +114,11 @@ updateStrategy:
 ##  - name: BEARER_AUTH
 ##    value: true
 ##
-extraEnvVars: []
+extraEnvVars:
+  - name: PHP_POST_MAX_SIZE
+    value: "900M"
+  - name: PHP_UPLOAD_MAX_FILESIZE
+    value: "900M"
 ## @param extraEnvVarsCM ConfigMap with extra environment variables
 ##
 extraEnvVarsCM: ""
@@ -126,7 +130,19 @@ extraEnvVarsSecret: ""
 extraVolumes: []
 ## @param extraVolumeMounts Array of extra volume mounts to be added to the container (evaluated as template). Normally used with `extraVolumes`.
 ##
-extraVolumeMounts: []
+extraVolumeMounts:
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/FleetONE_Data_Management_and_Visualization
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Full_Vehicle_Inspection_System
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Bogie_Geometry_Monitor
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Undercarriage_Coupler_Monitor
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Bogie_Side_Frame_Monitor
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Rail_Bearing_Acoustic_Monitor
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Rail_Acoustic_Monitor_Inboard
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Brake_Inspection_Monitor
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Wheel_Profile_Monitor
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Wheel_Condition_Monitor
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Broken_Wheel_Detector
+  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Train_Noise_Monitor
 ## @param initContainers Extra init containers to add to the deployment
 ##
 initContainers: []
