@@ -130,19 +130,7 @@ extraEnvVarsSecret: ""
 extraVolumes: []
 ## @param extraVolumeMounts Array of extra volume mounts to be added to the container (evaluated as template). Normally used with `extraVolumes`.
 ##
-extraVolumeMounts:
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/FleetONE_Data_Management_and_Visualization
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Full_Vehicle_Inspection_System
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Bogie_Geometry_Monitor
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Undercarriage_Coupler_Monitor
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Bogie_Side_Frame_Monitor
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Rail_Bearing_Acoustic_Monitor
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Rail_Acoustic_Monitor_Inboard
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Brake_Inspection_Monitor
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Wheel_Profile_Monitor
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Wheel_Condition_Monitor
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Broken_Wheel_Detector
-  - path: /bitnami/moodledata/repository/revealjs/_revealjs_/rmetcalf/Train_Noise_Monitor
+extraVolumeMounts: []
 ## @param initContainers Extra init containers to add to the deployment
 ##
 initContainers: []
