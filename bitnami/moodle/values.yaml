@@ -51,12 +51,12 @@ extraDeploy: []
 image:
   registry: docker.io
   repository: bitnami/moodle
-  tag: 3.11.6-debian-10-r24
+  tag: latest
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
   ##
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   ## Optionally specify an array of imagePullSecrets.
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -67,7 +67,7 @@ image:
   pullSecrets: []
   ## Set to true if you would like to see extra information on logs
   ##
-  debug: false
+  debug: true
 ## @param replicaCount Number of Moodle replicas (requires ReadWriteMany PVC support)
 ##
 replicaCount: 1
@@ -78,7 +78,7 @@ moodleSkipInstall: false
 ## @param moodleSiteName Site name
 ## ref: https://github.com/bitnami/bitnami-docker-moodle#configuration
 ##
-moodleSiteName: "Ryan's Moodle Site"
+moodleSiteName: Ryan's Moodle Site
 ## @param moodleUsername User of the application
 ## ref: https://github.com/bitnami/bitnami-docker-moodle#configuration
 ##
@@ -389,7 +389,7 @@ podLabels: {}
 service:
   ## @param service.type Service type
   ##
-  type: LoadBalancer
+  type: NodePort
   ## @param service.ports.http Service HTTP port
   ## @param service.ports.https Service HTTPS port
   ##
@@ -403,8 +403,8 @@ service:
   ##   https: <to set explicitly, choose port between 30000-32767>
   ##
   nodePorts:
-    http: ""
-    https: ""
+    http: 30808
+    https: 30844
   ## @param service.clusterIP Service Cluster IP
   ##
   clusterIP: ""
@@ -630,7 +630,7 @@ volumePermissions:
     registry: docker.io
     repository: bitnami/bitnami-shell
     tag: 10-debian-10-r389
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -674,7 +674,7 @@ metrics:
     registry: docker.io
     repository: bitnami/apache-exporter
     tag: 0.11.0-debian-10-r109
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -793,7 +793,7 @@ certificates:
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
     ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
     ##
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/

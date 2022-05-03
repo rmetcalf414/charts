@@ -23,7 +23,7 @@ global:
 kubeVersion: ""
 ## @param nameOverride String to partially override drupal.fullname template (will maintain the release name)
 ##
-nameOverride: ""
+nameOverride: "Ryan's Drupal Site"
 ## @param fullnameOverride String to fully override drupal.fullname template
 ##
 fullnameOverride: ""
@@ -380,7 +380,7 @@ podLabels: {}
 service:
   ## @param service.type Kubernetes Service type
   ##
-  type: LoadBalancer
+  type: NodePort
   ## @param service.ports.http Service HTTP port
   ## @param service.ports.https Service HTTPS port
   ##
@@ -402,8 +402,8 @@ service:
   ##   https: <to set explicitly, choose port between 30000-32767>
   ##
   nodePorts:
-    http: ""
-    https: ""
+    http: 32080
+    https: 32844
   ## @param service.externalTrafficPolicy Enable client source IP preservation
   ## ref https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
   ##
