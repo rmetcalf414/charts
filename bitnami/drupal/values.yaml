@@ -23,7 +23,7 @@ global:
 kubeVersion: ""
 ## @param nameOverride String to partially override drupal.fullname template (will maintain the release name)
 ##
-nameOverride: "Ryan's Drupal Site"
+nameOverride: ""
 ## @param fullnameOverride String to fully override drupal.fullname template
 ##
 fullnameOverride: ""
